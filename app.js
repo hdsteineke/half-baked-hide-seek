@@ -55,7 +55,7 @@ function getRandomHidingSpot() {
     
     // return that random hiding place string
         
-    
+
 }
 
 function handleGuess(userGuess, correctSpot) {
@@ -64,9 +64,9 @@ function handleGuess(userGuess, correctSpot) {
 
     // we can do that by removing the .face class from all containers
 
-    shedContainer.src='./assets/shed.png';
-    treeContainer.src='./assets/tree.webp';
-    boulderContainer.src='./assets/boulder.png';
+    shedContainer.classList.remove('face');
+    treeContainer.classList.remove('face');
+    boulderContainer.classList.remove('face');
 
 
     // then increment the guesses
