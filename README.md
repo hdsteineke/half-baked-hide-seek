@@ -46,3 +46,20 @@ https://alchemycodelab.github.io/web-01-hide-and-seek/
 | :----------------------------------------------------------------------------------- | ----------: |
 | IMPURE: `getRandomHidingSpot() : returns random item from given array` | 2 |
 | IMPURE: `handleGuess(userGuess, correctSpot)` | 2 |
+
+
+
+##Make Plan:
+
+SUGGESTED:
+        1) Call the handleGuess functions first inside event handlers
+        2) Pass the correct arguments to the handleGuess functions
+        3) Finish the handleGuess declaration
+
+MINE: 
+- 
+- Validate that each button responds when clicked
+- When clicked, ensure that wins and total are updated
+- Successfully get random generator to log corresponding string (boulder, tree, shed)
+- Assign random generator to correct guess
+- When guess is correct, display emoji face

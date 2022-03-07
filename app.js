@@ -16,18 +16,22 @@ let correctGuesses = 0;
 let totalGuesses = 0;
 
 shedButton.addEventListener('click', () => {
+    handleGuess();
+    
     // get a random item to call the 'correct spot'
 
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
 });
 
 treeButton.addEventListener('click', () => {
+    handleGuess();
     // get a random item to call the 'correct spot'
 
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
 });
 
 boulderButton.addEventListener('click', () => {
+    handleGuess();
     // get a random item to call the 'correct spot'
 
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
@@ -44,17 +48,30 @@ function getRandomHidingSpot() {
 
     const index = Math.floor(Math.random() * hidingPlaces.length);
 
-    // use the random index above and the array of hidingPlaces to get a random hiding place string
 
+    // use the random index above and the array of hidingPlaces to get a random hiding place string
+    
+    return hidingPlaces[index];
+    
     // return that random hiding place string
+        
+    
 }
 
 function handleGuess(userGuess, correctSpot) {
+
     // first, right after clicking, we need to remove the emoiji face from the previous hiding place that way we don't end up with more than one emoji face
 
     // we can do that by removing the .face class from all containers
 
+    shedContainer.src='./assets/shed.png';
+    treeContainer.src='./assets/tree.webp';
+    boulderContainer.src='./assets/boulder.png';
+
+
     // then increment the guesses
+
+    totalGuesses++;
 
     // then use getElementById and the correctSpot string to grab the appropriate container from the DOM
 
@@ -62,5 +79,8 @@ function handleGuess(userGuess, correctSpot) {
 
     // then if the user guess is correct, increment the correct guesses
 
+    if (userGuess === correctSpot) {
+        correctGuesses++;
+    }
     // update the DOM to show the new value of wins, losses and total guesses to the user
 }
