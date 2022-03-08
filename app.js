@@ -36,7 +36,7 @@ shedButton.addEventListener('click', () => {
 treeButton.addEventListener('click', () => {
     handleGuess('tree', getRandomHidingSpot());
     treeGuesses++;
-    console.log(treeButton)
+    
 
 
     // get a random item to call the 'correct spot'
@@ -75,7 +75,6 @@ function getRandomHidingSpot() {
 }
 
 function handleGuess(userGuess, correctSpot) {
-    console.log(userGuess, correctSpot);
 
     // first, right after clicking, we need to remove the emoji face from the previous hiding place that way we don't end up with more than one emoji face
 
