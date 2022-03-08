@@ -64,7 +64,7 @@ function getRandomHidingSpot() {
 function handleGuess(userGuess, correctSpot) {
     console.log(userGuess, correctSpot);
 
-    // first, right after clicking, we need to remove the emoiji face from the previous hiding place that way we don't end up with more than one emoji face
+    // first, right after clicking, we need to remove the emoji face from the previous hiding place that way we don't end up with more than one emoji face
 
     // we can do that by removing the .face class from all containers
 
@@ -78,10 +78,11 @@ function handleGuess(userGuess, correctSpot) {
     totalGuesses++;
 
     // then use getElementById and the correctSpot string to grab the appropriate container from the DOM
-        let hidingSpotEl = document.getElementById(correctSpot + '-container');
-        console.log(hidingSpotEl);
+    let hidingSpotEl = document.getElementById(correctSpot + '-container');
+    
 
     // then add the .face css class to that element so that the face shows up
+    hidingSpotEl.classList.add('face');
 
     // then if the user guess is correct, increment the correct guesses
 
