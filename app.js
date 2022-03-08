@@ -11,13 +11,22 @@ const totalEl = document.getElementById('total');
 const lossesEl = document.getElementById('losses');
 const winsEl = document.getElementById('wins');
 
+const shedGuessEl = document.getElementById('guess-shed');
+const treeGuessEl = document.getElementById('guess-tree');
+const boulderGuessEl = document.getElementById('guess-boulder');
 
 let correctGuesses = 0;
 let totalGuesses = 0;
 
+let treeGuesses = 0;
+let shedGuesses = 0;
+let boulderGuesses = 0;
+
 shedButton.addEventListener('click', () => {
 
     handleGuess('shed', getRandomHidingSpot());
+    shedGuesses++;
+    
     
     // get a random item to call the 'correct spot'
 
@@ -26,6 +35,9 @@ shedButton.addEventListener('click', () => {
 
 treeButton.addEventListener('click', () => {
     handleGuess('tree', getRandomHidingSpot());
+    treeGuesses++;
+    console.log(treeButton)
+
 
     // get a random item to call the 'correct spot'
 
@@ -34,6 +46,7 @@ treeButton.addEventListener('click', () => {
 
 boulderButton.addEventListener('click', () => {
     handleGuess('boulder', getRandomHidingSpot());
+    boulderGuesses++;
 
     // get a random item to call the 'correct spot'
 
@@ -93,4 +106,8 @@ function handleGuess(userGuess, correctSpot) {
     winsEl.textContent = correctGuesses;
     totalEl.textContent = totalGuesses;
     lossesEl.textContent = totalGuesses - correctGuesses;
+
+    shedGuessEl.textContent = shedGuesses;
+    treeGuessEl.textContent = treeGuesses;
+    boulderGuessEl.textContent = boulderGuesses;
 }
