@@ -90,4 +90,7 @@ function handleGuess(userGuess, correctSpot) {
         correctGuesses++;
     }
     // update the DOM to show the new value of wins, losses and total guesses to the user
+    winsEl.textContent = correctGuesses;
+    totalEl.textContent = totalGuesses;
+    lossesEl.textContent = totalGuesses - correctGuesses;
 }
