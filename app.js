@@ -16,7 +16,8 @@ let correctGuesses = 0;
 let totalGuesses = 0;
 
 shedButton.addEventListener('click', () => {
-    handleGuess();
+
+    handleGuess('shed', getRandomHidingSpot());
     
     // get a random item to call the 'correct spot'
 
@@ -24,14 +25,16 @@ shedButton.addEventListener('click', () => {
 });
 
 treeButton.addEventListener('click', () => {
-    handleGuess();
+    handleGuess('tree', getRandomHidingSpot());
+
     // get a random item to call the 'correct spot'
 
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
 });
 
 boulderButton.addEventListener('click', () => {
-    handleGuess();
+    handleGuess('boulder', getRandomHidingSpot());
+
     // get a random item to call the 'correct spot'
 
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
@@ -59,6 +62,7 @@ function getRandomHidingSpot() {
 }
 
 function handleGuess(userGuess, correctSpot) {
+    console.log(userGuess, correctSpot);
 
     // first, right after clicking, we need to remove the emoiji face from the previous hiding place that way we don't end up with more than one emoji face
 
@@ -74,6 +78,8 @@ function handleGuess(userGuess, correctSpot) {
     totalGuesses++;
 
     // then use getElementById and the correctSpot string to grab the appropriate container from the DOM
+        let hidingSpotEl = document.getElementById(correctSpot + '-container');
+        console.log(hidingSpotEl);
 
     // then add the .face css class to that element so that the face shows up
 
